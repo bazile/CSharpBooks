@@ -1,4 +1,4 @@
-﻿# Простой GET запрос без использования async/await
+﻿# Простой GET запрос
 
 ## HttpWebRequest
 ```csharp
