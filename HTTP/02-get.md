@@ -1,4 +1,4 @@
-﻿# Простой GET запрос без использования async/await
+﻿# Простой GET запрос с использованием async/await
 
 ## HttpWebRequest
 ```csharp
@@ -8,13 +8,13 @@ HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://example.com")
 // Всегда указывайте User-Agent!
 request.UserAgent = ".NET Application";
 
-using (WebResponse response = request.GetResponse())
+using (WebResponse response = await request.GetResponseAsync())
 {
 	using (Stream responseStream = response.GetResponseStream())
 	{
 		using (StreamReader reader = new StreamReader(responseStream))
 		{
-			string responseText = reader.ReadToEnd();
+			string responseText = await reader.ReadToEndAsync();
 		}
 	}
 }
@@ -28,13 +28,13 @@ HttpWebRequest request = WebRequest.CreateHttp("http://example.com");
 // Всегда указывайте User-Agent!
 request.UserAgent = ".NET Application";
 
-using (WebResponse response = request.GetResponse())
+using (WebResponse response = await request.GetResponseAsync())
 {
 	using (Stream responseStream = response.GetResponseStream())
 	{
 		using (StreamReader reader = new StreamReader(responseStream))
 		{
-			string responseText = reader.ReadToEnd();
+			string responseText = await reader.ReadToEndAsync();
 		}
 	}
 }
@@ -48,13 +48,11 @@ using (WebClient webClient = new WebClient())
 {
 	// Всегда указывайте User-Agent!
 	webClient.Headers.Add(HttpRequestHeader.UserAgent, ".NET Application");
-	string responseText = webClient.DownloadString("http://example.com");
+	string responseText = await webClient.DownloadStringTaskAsync("http://example.com");
 }
 ```
 
 ## HttpClient
-
-Класс HttpClient не содержит синхронных методов, но это можно обойти. Рекомендуется все-таки использовать именно async/await вариант.
 
 ```csharp
 using System.Net.Http;
@@ -63,16 +61,10 @@ using (HttpClient httpClient = new HttpClient())
 {
 	// Всегда указывайте User-Agent!
 	httpClient.DefaultRequestHeaders.Add("User-Agent", ".NET Application");
-	string responseText = httpClient.GetStringAsync("http://example.com").GetAwaiter().GetResult();
+	string responseText = await httpClient.GetStringAsync("http://example.com");
 }
 ```
 
 ## xNet
-```csharp
-using xNet;
-...
-HttpRequest request = new HttpRequest();
-// Всегда указывайте User-Agent!
-request.UserAgent = ".NET Application";
-string responseText = request.Get("http://example.com").ToString();
-```
+
+Библиотека xNet не содержит async методов.
