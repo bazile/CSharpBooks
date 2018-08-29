@@ -1,6 +1,7 @@
 ﻿# Простой GET запрос с использованием async/await
 
 ## HttpWebRequest
+
 ```csharp
 using System.Net;
 ...
@@ -21,6 +22,7 @@ using (WebResponse response = await request.GetResponseAsync())
 ```
 
 ## HttpWebRequest (.NET Framework 4.5+)
+
 ```csharp
 using System.Net;
 ...
@@ -41,6 +43,7 @@ using (WebResponse response = await request.GetResponseAsync())
 ```
 
 ## WebClient
+
 ```csharp
 using System.Net;
 ...

@@ -1,6 +1,7 @@
 ﻿# Простой GET запрос
 
 ## HttpWebRequest
+
 ```csharp
 using System.Net;
 ...
@@ -21,6 +22,7 @@ using (WebResponse response = request.GetResponse())
 ```
 
 ## HttpWebRequest (.NET Framework 4.5+)
+
 ```csharp
 using System.Net;
 ...
@@ -41,6 +43,7 @@ using (WebResponse response = request.GetResponse())
 ```
 
 ## WebClient
+
 ```csharp
 using System.Net;
 ...
@@ -54,20 +57,10 @@ using (WebClient webClient = new WebClient())
 
 ## HttpClient
 
-Класс HttpClient не содержит синхронных методов, но это можно обойти. Рекомендуется все-таки использовать именно async/await вариант.
-
-```csharp
-using System.Net.Http;
-...
-using (HttpClient httpClient = new HttpClient())
-{
-	// Всегда указывайте User-Agent!
-	httpClient.DefaultRequestHeaders.Add("User-Agent", ".NET Application");
-	string responseText = httpClient.GetStringAsync("http://example.com").GetAwaiter().GetResult();
-}
-```
+Класс HttpClient не содержит синхронных методов.
 
 ## xNet
+
 ```csharp
 using xNet;
 ...
