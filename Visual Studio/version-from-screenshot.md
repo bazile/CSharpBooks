@@ -4,6 +4,7 @@
  * Меню Extensions
  * Текст ADMIN в строке панели инструментов когда VS запущена с elevated правами
  * Метки Paid/Trial в списке расширений
+ * Флажок "Do not load projects" в окне Open projects, filtered solution, \*.slnf файлы
 
 # VS 2017
 
