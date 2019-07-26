@@ -1,4 +1,4 @@
-﻿Признаки по которым можно определить версию VS
+﻿Different Visual Studio tips
 
 # Debugger
 
@@ -21,3 +21,39 @@ Supported from Visual Studio 2017 v15.8
 ![blue dot](https://github.com/bazile/CSharpBooks/blob/master/Visual%20Studio/debug-blue-dot.jpg)
 
 Supported from Visual Studio 2013
+
+
+# Editor
+
+**Copy any JSON fragment** to the clipboard and paste it as strongly typed .NET classes into any C# or VB code file.
+
+![Paste JSON as classes](https://github.com/bazile/CSharpBooks/blob/master/Visual%20Studio/editor-paste-json-1.jpg)
+
+Supported from Visual Studio 2013
+
+
+**Make IntelliSense and tooltips semi-transparent** for the duration you press and hold the Control key.
+
+![Make IntelliSense and tooltips semi-transparent](https://github.com/bazile/CSharpBooks/blob/master/Visual%20Studio/transparent-presenters.jpg)
+
+Supported from Visual Studio 2010
+
+# Extensions
+
+ * (VsColorOutput)[https://marketplace.visualstudio.com/items?itemName=MikeWard-AnnArbor.VSColorOutput]: change the color of a line emitted to the output window based on specified rules.
+
+
+# Miscellaneous
+
+**Create custom window layouts** for specific development scenarios or monitor setups and switch between them easily.
+
+![Custom window layouts](https://github.com/bazile/CSharpBooks/blob/master/Visual%20Studio/custom-window-layouts-2.jpg)
+
+Supported from Visual Studio 2017
+
+
+**Specify which Visual Studio components** are required for any solution, and Visual Studio will prompt the user to install them if missing. Read more in the blog post [Configure Visual Studio across your organization with .vsconfig](https://devblogs.microsoft.com/setup/configure-visual-studio-across-your-organization-with-vsconfig/).
+
+![.vsconfig](https://github.com/bazile/CSharpBooks/blob/master/Visual%20Studio/solution-vsconfig.png)
+
+Supported from Visual Studio 2019
